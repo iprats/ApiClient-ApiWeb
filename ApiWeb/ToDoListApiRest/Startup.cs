@@ -16,7 +16,7 @@ namespace ToDoListApiRest
 {
     public class Startup
     {
-        /*
+        //*
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -59,7 +59,7 @@ namespace ToDoListApiRest
 
 
 
-        //*
+        /*
          
         public Startup(IConfiguration configuration)
         {
