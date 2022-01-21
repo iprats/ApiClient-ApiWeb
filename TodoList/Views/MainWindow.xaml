@@ -1,0 +1,80 @@
+﻿<Window x:Class="TodoList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoList"
+        mc:Ignorable="d"
+        Title="To Do List" Height="650" Width="850" MinHeight="630" MaxHeight="830" >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="230*"/>
+            <RowDefinition Height="230*"/>
+            <RowDefinition Height="230*"/>
+        </Grid.RowDefinitions>
+
+        <Menu x:Name="MenuItems" Grid.ColumnSpan="2" >
+            <MenuItem Header="Afegir tasca" Height="23" Width="85" Click="MenuItem_Click"/>
+            <MenuItem  x:Name="btn_mi_modificar" Header="Modificar tasca"  Click="MenuItem_Modificar" />
+            <MenuItem x:Name="btn_AfegirResponsalbe" Header="Afegir responsable" Click="btn_AfegirResponsalbe_Click"/>
+            <MenuItem Header="Eliminar tasca" Click="MenuItem_Eliminar" />
+        </Menu>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,30,0,0" Grid.RowSpan="2" Width="788">
+            <ListView  Margin="10" Name="lvTascaToDo" Width="768" SelectionChanged="lvTascaToDo_SelectionChanged" Drop="ListView_Drop" AllowDrop="True" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn  Header="ID" Width="0" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Nom" Width="90" DisplayMemberBinding="{Binding Nom}"/>
+                        <GridViewColumn Header="Descripció" Width="130" DisplayMemberBinding="{Binding Descripcio}"/>
+                        <GridViewColumn Header="Data Inici" Width="110" DisplayMemberBinding="{Binding DInici}"/>
+                        <GridViewColumn Header="Data Final" Width="110" DisplayMemberBinding="{Binding DFinal}"/>
+                        <GridViewColumn Header="Prioritat" Width="90" DisplayMemberBinding="{Binding Prioritat_name}"/>
+                        <GridViewColumn Header="Responsable" Width="90" DisplayMemberBinding="{Binding Responsable_name}"/>
+                        <GridViewColumn Header="Estat" Width="90" DisplayMemberBinding="{Binding Estat_name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="788">
+            <ListView Margin="10" Name="lvTascaDoing" Width="768" SelectionChanged="lvTascaDoing_SelectionChanged" Drop="ListView_Drop" AllowDrop="True" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" Width="0" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Nom" Width="90" DisplayMemberBinding="{Binding Nom}"/>
+                        <GridViewColumn Header="Descripció" Width="130" DisplayMemberBinding="{Binding Descripcio}"/>
+                        <GridViewColumn Header="Data Inici" Width="110" DisplayMemberBinding="{Binding DInici}"/>
+                        <GridViewColumn Header="Data Final" Width="110" DisplayMemberBinding="{Binding DFinal}"/>
+                        <GridViewColumn Header="Prioritat" Width="90" DisplayMemberBinding="{Binding Prioritat_name}"/>
+                        <GridViewColumn Header="Responsable" Width="90" DisplayMemberBinding="{Binding Responsable_name}"/>
+                        <GridViewColumn Header="Estat" Width="90" DisplayMemberBinding="{Binding Estat_name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Width="788">
+            <ListView Margin="10" Name="lvTascaDone" Width="768" SelectionChanged="lvTascaDone_SelectionChanged" Drop="ListView_Drop" AllowDrop="True" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" Width="0" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Nom" Width="90" DisplayMemberBinding="{Binding Nom}"/>
+                        <GridViewColumn Header="Descripció" Width="130" DisplayMemberBinding="{Binding Descripcio}"/>
+                        <GridViewColumn Header="Data Inici" Width="110" DisplayMemberBinding="{Binding DInici}"/>
+                        <GridViewColumn Header="Data Final" Width="110" DisplayMemberBinding="{Binding DFinal}"/>
+                        <GridViewColumn Header="Prioritat" Width="90" DisplayMemberBinding="{Binding Prioritat_name}"/>
+                        <GridViewColumn Header="Responsable" Width="90" DisplayMemberBinding="{Binding Responsable_name}"/>
+                        <GridViewColumn Header="Estat" Width="90" DisplayMemberBinding="{Binding Estat_name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
